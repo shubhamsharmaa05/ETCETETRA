@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - ETCETRA</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="site-wrapper">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="header-left">
+                        <button class="menu-button" id="menuButton" aria-label="Open menu">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <a href="index.html" class="logo">ETCETRA</a>
+                        <nav class="desktop-nav">
+                            <a href="index.html" class="nav-link">Home</a>
+                            <a href="products.html" class="nav-link">Products</a>
+                            <a href="about.html" class="nav-link">About</a>
+                            <a href="contact.html" class="nav-link">Contact</a>
+                        </nav>
+                    </div>
+                    <div class="header-search">
+                        <div class="search-container">
+                            <i class="fas fa-search search-icon"></i>
+                            <input type="text" class="search-input" placeholder="Search for products...">
+                        </div>
+                    </div>
+                    <div class="header-actions">
+                        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                            <i class="fas fa-sun sun-icon"></i>
+                            <i class="fas fa-moon moon-icon"></i>
+                        </button>
+                        <a href="profile.html" class="icon-button active" aria-label="Profile">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <a href="cart.html" class="icon-button" aria-label="Cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-container">
+                <div class="mobile-menu-header">
+                    <a href="index.html" class="logo">ETCETRA</a>
+                    <button class="close-menu" id="closeMenu" aria-label="Close menu">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <nav class="mobile-nav">
+                    <a href="index.html" class="mobile-nav-link">Home</a>
+                    <a href="products.html" class="mobile-nav-link">Products</a>
+                    <a href="about.html" class="mobile-nav-link">About</a>
+                    <a href="contact.html" class="mobile-nav-link">Contact</a>
+                    <a href="login.html" class="mobile-nav-link">Login</a>
+                    <a href="register.html" class="mobile-nav-link">Register</a>
+                </nav>
+            </div>
+        </div>
+
+        <main>
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>My Profile</span>
+                </div>
+
+                <div class="profile-container">
+                    <!-- Profile Sidebar -->
+                    <div class="profile-sidebar">
+                        <div class="profile-card">
+                            <div class="profile-avatar">
+                                <img src="placeholder.jpg" alt="Profile Picture">
+                            </div>
+                            <h2 class="profile-name">John Doe</h2>
+                            <p class="profile-email">john.doe@example.com</p>
+                            
+                            <div class="profile-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">5</div>
+                                    <div class="stat-label">Orders</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">3</div>
+                                    <div class="stat-label">Reviews</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">8</div>
+                                    <div class="stat-label">Wishlist</div>
+                                </div>
+                            </div>
+                            
+                            <div class="profile-actions">
+                                <button class="button outline">Edit Profile</button>
+                                <button class="button outline">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-nav">
+                            <a href="#overview" class="profile-nav-link active" data-tab="overview">
+                                <i class="fas fa-user"></i>
+                                <span>Overview</span>
+                            </a>
+                            <a href="#orders" class="profile-nav-link" data-tab="orders">
+                                <i class="fas fa-shopping-bag"></i>
+                                <span>Orders</span>
+                            </a>
+                            <a href="#addresses" class="profile-nav-link" data-tab="addresses">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Addresses</span>
+                            </a>
+                            <a href="#payment" class="profile-nav-link" data-tab="payment">
+                                <i class="fas fa-credit-card"></i>
+                                <span>Payment Methods</span>
+                            </a>
+                            <a href="#wishlist" class="profile-nav-link" data-tab="wishlist">
+                                <i class="fas fa-heart"></i>
+                                <span>Wishlist</span>
+                            </a>
+                            <a href="#reviews" class="profile-nav-link" data-tab="reviews">
+                                <i class="fas fa-star"></i>
+                                <span>Reviews</span>
+                            </a>
+                            <a href="#settings" class="profile-nav-link" data-tab="settings">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Profile Content -->
+                    <div class="profile-content">
+                        <!-- Overview Tab -->
+                        <div class="profile-tab active" id="overview">
+                            <div class="profile-tab-header">
+                                <h2>Account Overview</h2>
+                            </div>
+                            
+                            <div class="profile-details">
+                                <div class="profile-detail-item">
+                                    <div class="profile-detail-label">Full Name</div>
+                                    <div class="profile-detail-value">John Doe</div>
+                                </div>
+                                <div class="profile-detail-item">
+                                    <div class="profile-detail-label">Email</div>
+                                    <div class="profile-detail-value">john.doe@example.com</div>
+                                </div>
+                                <div class="profile-detail-item">
+                                    <div class="profile-detail-label">Phone</div>
+                                    <div class="profile-detail-value">+1 (555) 123-4567</div>
+                                </div>
+                                <div class="profile-detail-item">
+                                    <div class="profile-detail-label">Member Since</div>
+                                    <div class="profile-detail-value">January 15, 2023</div>
+                                </div>
+                            </div>
+                            
+                            <div class="profile-tab-header">
+                                <h2>Recent Orders</h2>
+                                <a href="#orders" class="text-link" data-tab="orders">View All</a>
+                            </div>
+                            
+                            <div class="order-history">
+                                <div class="order-card">
+                                    <div class="order-header">
+                                        <div>
+                                            <div class="order-number">#ORD-2023-1001</div>
+                                            <div class="order-date">March 15, 2023</div>
+                                        </div>
+                                        <div class="order-status delivered">Delivered</div>
+                                    </div>
+                                    <div class="order-items">
+                                        <div class="order-item">
+                                            <div class="order-item-image">
+                                                <img src="placeholder.jpg" alt="Product Image">
+                                            </div>
+                                            <div class="order-item-details">
+                                                <div class="order-item-name">Classic Oversized Tee - Black</div>
+                                                <div class="order-item-meta">
+                                                    <span>Size: L</span>
+                                                    <span>•</span>
+                                                    <span>Color: Black</span>
+                                                    <span>•</span>
+                                                    <span>Qty: 1</span>
+                                                </div>
+                                                <div class="order-item-price">$29.99</div>
+                                            </div>
+                                        </div>
+                                        <div class="order-item">
+                                            <div class="order-item-image">
+                                                <img src="placeholder.jpg" alt="Product Image">
+                                            </div>
+                                            <div class="order-item-details">
+                                                <div class="order-item-name">Premium Denim Jacket</div>
+                                                <div class="order-item-meta">
+                                                    <span>Size: M</span>
+                                                    <span>•</span>
+                                                    <span>Color: Blue</span>
+                                                    <span>•</span>
+                                                    <span>Qty: 1</span>
+                                                </div>
+                                                <div class="order-item-price">$89.99</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="order-summary">
+                                        <div class="order-total-label">Total:</div>
+                                        <div class="order-total-value">$119.98</div>
+                                    </div>
+                                    <div class="order-actions">
+                                        <button class="button outline">Track Order</button>
+                                        <button class="button primary">View Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Orders Tab -->
+                        <div class="profile-tab" id="orders">
+                            <div class="profile-tab-header">
+                                <h2>My Orders</h2>
+                            </div>
+                            
+                            <div class="order-history">
+                                <!-- Order cards will be added here -->
+                            </div>
+                        </div>
+                        
+                        <!-- Addresses Tab -->
+                        <div class="profile-tab" id="addresses">
+                            <div class="profile-tab-header">
+                                <h2>My Addresses</h2>
+                                <button class="button outline">Add New Address</button>
+                            </div>
+                            
+                            <div class="address-card">
+                                <div class="address-type">
+                                    <span>Home Address</span>
+                                    <span class="address-default">Default</span>
+                                </div>
+                                <div class="address-content">
+                                    <p>John Doe</p>
+                                    <p>123 Main Street, Apt 4B</p>
+                                    <p>New York, NY 10001</p>
+                                    <p>United States</p>
+                                    <p>Phone: +1 (555) 123-4567</p>
+                                </div>
+                                <div class="address-actions">
+                                    <button class="button outline">Edit</button>
+                                    <button class="button outline">Delete</button>
+                                </div>
+                            </div>
+                            
+                            <div class="address-card">
+                                <div class="address-type">
+                                    <span>Work Address</span>
+                                </div>
+                                <div class="address-content">
+                                    <p>John Doe</p>
+                                    <p>456 Business Ave, Suite 200</p>
+                                    <p>New York, NY 10002</p>
+                                    <p>United States</p>
+                                    <p>Phone: +1 (555) 987-6543</p>
+                                </div>
+                                <div class="address-actions">
+                                    <button class="button outline">Edit</button>
+                                    <button class="button outline">Delete</button>
+                                    <button class="button outline">Set as Default</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Payment Methods Tab -->
+                        <div class="profile-tab" id="payment">
+                            <div class="profile-tab-header">
+                                <h2>Payment Methods</h2>
+                                <button class="button outline">Add New Card</button>
+                            </div>
+                            
+                            <div class="payment-method">
+                                <div class="payment-icon">
+                                    <i class="fab fa-cc-visa"></i>
+                                </div>
+                                <div class="payment-details">
+                                    <div class="payment-card-number">Visa ending in 4242</div>
+                                    <div class="payment-expiry">Expires 05/2025</div>
+                                </div>
+                                <div class="payment-actions">
+                                    <button class="button outline">Edit</button>
+                                    <button class="button outline">Delete</button>
+                                </div>
+                            </div>
+                            
+                            <div class="payment-method">
+                                <div class="payment-icon">
+                                    <i class="fab fa-cc-mastercard"></i>
+                                </div>
+                                <div class="payment-details">
+                                    <div class="payment-card-number">Mastercard ending in 8888</div>
+                                    <div class="payment-expiry">Expires 12/2024</div>
+                                </div>
+                                <div class="payment-actions">
+                                    <button class="button outline">Edit</button>
+                                    <button class="button outline">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Wishlist Tab -->
+                        <div class="profile-tab" id="wishlist">
+                            <!-- Wishlist content -->
+                        </div>
+                        
+                        <!-- Reviews Tab -->
+                        <div class="profile-tab" id="reviews">
+                            <!-- Reviews content -->
+                        </div>
+                        
+                        <!-- Settings Tab -->
+                        <div class="profile-tab" id="settings">
+                            <div class="profile-tab-header">
+                                <h2>Account Settings</h2>
+                            </div>
+                            
+                            <form class="settings-form">
+                                <div class="form-group">
+                                    <label for="current-password">Current Password</label>
+                                    <input type="password" id="current-password" class="form-input" placeholder="Enter your current password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="new-password">New Password</label>
+                                    <input type="password" id="new-password" class="form-input" placeholder="Enter your new password">
+                                    <div class="form-help">Password must be at least 8 characters long and include a number and a special character.</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirm-password">Confirm New Password</label>
+                                    <input type="password" id="confirm-password" class="form-input" placeholder="Confirm your new password">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <h3>Email Preferences</h3>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" checked> Order confirmations and updates
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" checked> Promotional emails and special offers
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox"> Product recommendations
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" checked> Newsletter
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="button" class="button outline">Cancel</button>
+                                    <button type="submit" class="button primary">Save Changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h3 class="footer-heading">Shop</h3>
+                            <ul class="footer-list">
+                                <li><a href="products.html">All Products</a></li>
+                                <li><a href="products.html?category=new">New Arrivals</a></li>
+                                <li><a href="products.html?category=bestsellers">Best Sellers</a></li>
+                                <li><a href="products.html?category=sale">Sale</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3 class="footer-heading">Company</h3>
+                            <ul class="footer-list">
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="careers.html">Careers</a></li>
+                                <li><a href="terms.html">Terms & Conditions</a></li>
+                                <li><a href="privacy.html">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3 class="footer-heading">Account</h3>
+                            <ul class="footer-list">
+                                <li><a href="login.html">Login</a></li>
+                                <li><a href="register.html">Register</a></li>
+                                <li><a href="profile.html">My Account</a></li>
+                                <li><a href="orders.html">Order History</a></li>
+                                <li><a href="wishlist.html">Wishlist</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3 class="footer-heading">Customer Service</h3>
+                            <ul class="footer-list">
+                                <li><a href="faqs.html">FAQs</a></li>
+                                <li><a href="shipping.html">Shipping Information</a></li>
+                                <li><a href="returns.html">Returns & Exchanges</a></li>
+                                <li><a href="size-guide.html">Size Guide</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <div class="copyright">
+                            &copy; 2023 ETCETRA. All rights reserved.
+                        </div>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Pinterest">
+                                <i class="fab fa-pinterest-p"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab switching functionality
+            const tabLinks = document.querySelectorAll('.profile-nav-link');
+            const tabContents = document.querySelectorAll('.profile-tab');
+            
+            tabLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links and tabs
+                    tabLinks.forEach(l => l.classList.remove('active'));
+                    tabContents.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // Show corresponding tab content
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                    
+                    // Update URL hash
+                    window.location.hash = tabId;
+                });
+            });
+            
+            // Check for hash in URL on page load
+            if (window.location.hash) {
+                const hash = window.location.hash.substring(1);
+                const tabLink = document.querySelector(`.profile-nav-link[data-tab="${hash}"]`);
+                if (tabLink) {
+                    tabLink.click();
+                }
+            }
+            
+            // Update cart count
+            updateCartCount();
+        });
+        
+        // Helper function to update cart count
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            
+            const cartCountElement = document.getElementById('cartCount');
+            if (cartCountElement) {
+                cartCountElement.textContent = totalItems;
+                
+                if (totalItems > 0) {
+                    cartCountElement.style.display = 'inline-flex';
+                } else {
+                    cartCountElement.style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+

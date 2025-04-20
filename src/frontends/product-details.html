@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details - ETCETRA</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="product-details.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">
+            <h1>ETCETRA</h1>
+          </a>
+        </div>
+        
+        <div class="header-actions">
+          <button id="themeToggle" class="icon-btn">
+            <i class="fas fa-moon"></i>
+          </button>
+          <a href="cart.html" class="icon-btn cart-icon" aria-label="Cart">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span id="cartCount" class="cart-count" style="background-color: red;"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu">
+      <div class="mobile-menu-header">
+        <div class="logo">ETCETRA</div>
+        <button id="closeMenu" class="close-menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> &gt;
+        <a href="products.html">Products</a> &gt;
+        <span id="product-breadcrumb-name">Product Name</span>
+      </div>
+
+      <div class="product-detail-container">
+        <div class="product-gallery">
+          <div class="main-image-container">
+            <img src="../img/OV5118.webp" alt="Product Name" id="main-product-image">
+            <div>
+              <button class="gallery-nav prev" id="gallery-prev">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="gallery-nav next" id="gallery-next">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-info">
+          <div class="product-badges" id="product-badges">
+            <!-- Badges will be populated by JavaScript if needed -->
+            <span class="badge new-badge">New</span>
+            <span class="badge sale-badge">Sale</span>
+          </div>
+          
+          <h1 class="product-title" id="product-name">Product Name</h1>
+          
+          <div class="product-meta">
+            <div class="product-sku">SKU: <span id="product-sku">ETR-12345</span></div>
+          </div>
+          
+          <div class="product-price">
+            $<span class="current-price" id="product-price">10.00</span>
+            <span class="original-price" id="product-original-price">20.00</span>
+            <span class="discount-badge" id="product-discount">-0%</span>
+          </div>
+          
+          <div class="product-availability">
+            <i class="fas fa-check-circle"></i> In Stock
+          </div>
+          
+          <div class="product-description" id="product-description">
+            <p>Loading product description...</p>
+          </div>
+          
+          <div class="product-options">
+            <div class="option-group">
+              <label>Size</label>
+              <a href="size-guide.html" class="size-guide-link" style="color: black">Size Guide <i class="fas fa-ruler"></i></a>
+            </div>
+            <label for="size">Choose Size:</label>
+              <select name="size" id="size">
+                <option value="">--Select Size--</option>
+                <option value="XS">XS</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+              </select>
+            <div class="option-group">
+              <label>Quantity</label>
+              <div class="quantity-control">
+                <button class="quantity-btn minus" id="quantity-minus">
+                  <i class="fas fa-minus"></i>
+                </button>
+                <input type="number" min="1" value="1" id="quantity">
+                <button class="quantity-btn plus" id="quantity-plus">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="product-actions">
+            <button id="add-to-cart-btn" class="btn primary-btn">
+              <i class="fas fa-shopping-cart"></i> Add to Cart
+            </button>
+          </div>
+          
+          <div class="product-features">
+            <div class="feature-item">
+              <i class="fas fa-truck"></i>
+              <div>
+                <strong>Free Shipping</strong>
+                <p>On orders over $100</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-undo"></i>
+              <div>
+                <strong>Easy Returns</strong>
+                <p>30-day return policy</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-shield-alt"></i>
+              <div>
+                <strong>Secure Payment</strong>
+                <p>SSL encrypted checkout</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <strong>Quality Guarantee</strong>
+                <p>Satisfaction guaranteed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="product-details-tabs">
+        <div class="tabs-header">
+          <button class="tab-btn active" data-tab="description">Description</button>
+          <button class="tab-btn" data-tab="specifications">Specifications</button>
+          <button class="tab-btn" data-tab="reviews">Reviews <span id="review-count-tab"></span></button>
+          <button class="tab-btn" data-tab="shipping">Shipping & Returns</button>
+        </div>
+        
+        <div class="tabs-content">
+          <div class="tab-panel active" id="description-panel">
+            <div class="tab-content">
+              <h3>Product Description</h3>
+              <div id="full-description">
+                <!-- Full description will be populated by JavaScript -->
+              </div>
+              <div class="product-highlights">
+                <h4>Highlights</h4>
+                <ul id="product-highlights">
+                  <li>Premium quality materials</li>
+                  <li>Comfortable fit for all-day wear</li>
+                  <li>Versatile design for any occasion</li>
+                  <li>Easy care and maintenance</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="tab-panel" id="specifications-panel">
+            <div class="tab-content">
+              <h3>Product Specifications</h3>
+              <table class="specs-table">
+                <tbody id="specs-table-body">
+                  <!-- Specifications will be populated by JavaScript -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          
+      
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-links">
+          <div class="footer-column">
+            <h3 class="footer-heading">Shop</h3>
+            <ul class="footer-list">
+              <li><a href="products.html">All Products</a></li>
+              <li><a href="products.html?category=Tees">T-Shirts</a></li>
+              <li><a href="products.html?category=Hoodies">Hoodies</a></li>
+              <li><a href="products.html?category=Pants">Pants</a></li>
+              <li><a href="products.html?category=Accessories">Accessories</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3 class="footer-heading">Help</h3>
+            <ul class="footer-list">
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="size-guide.html">Size Guide</a></li>
+              <li><a href="returns.html">Returns & Exchanges</a></li>
+              <li><a href="shipping.html">Shipping Information</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3 class="footer-heading">About</h3>
+            <ul class="footer-list">
+              <li><a href="about.html">Our Story</a></li>
+              <li><a href="sustainability.html">Sustainability</a></li>
+              <li><a href="careers.html">Careers</a></li>
+              <li><a href="press.html">Press</a></li>
+              <li><a href="blog.html">Blog</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3 class="footer-heading">Connect</h3>
+            <ul class="footer-list social-links">
+              <li><a href="#" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+              <li><a href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+              <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+              <li><a href="#" target="_blank"><i class="fab fa-pinterest-p"></i> Pinterest</a></li>
+              <li><a href="#" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="newsletter">
+            <h3>Join Our Newsletter</h3>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address" required>
+              <button type="submit" class="btn primary-btn">Subscribe</button>
+            </form>
+          </div>
+          <div class="footer-info">
+            <p class="copyright">&copy; <span id="currentYear">2023</span> ETCETRA. All rights reserved.</p>
+            <div class="footer-legal">
+              <a href="terms.html">Terms of Service</a>
+              <a href="privacy.html">Privacy Policy</a>
+              <a href="cookies.html">Cookie Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="notification" class="notification"></div>
+
+  <script src="script.js"></script>
+  <script>
+    // Add your product image sources here
+    const productImages = [
+      "../img/OV5118.webp",
+      "../img/Red_05.webp",
+      "../img/img3.webp",
+      "../img/OV5666.webp"
+    ];
+  
+    let currentIndex = 0;
+    const mainImage = document.getElementById("main-product-image");
+  
+    const showImage = (index) => {
+      if (index >= 0 && index < productImages.length) {
+        mainImage.src = productImages[index];
+      }
+    };
+  
+    document.getElementById("gallery-next").addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % productImages.length; // Wrap around
+      showImage(currentIndex);
+    });
+  
+    document.getElementById("gallery-prev").addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + productImages.length) % productImages.length; // Wrap around
+      showImage(currentIndex);
+    });
+  
+    // Optional: preload all images for smooth navigation
+    productImages.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const minusBtn = document.getElementById("quantity-minus");
+      const plusBtn = document.getElementById("quantity-plus");
+      const quantityInput = document.getElementById("quantity");
+  
+      plusBtn.addEventListener("click", () => {
+        let currentValue = parseInt(quantityInput.value);
+        quantityInput.value = currentValue + 1;
+      });
+  
+      minusBtn.addEventListener("click", () => {
+        let currentValue = parseInt(quantityInput.value);
+        if (currentValue > 1) {
+          quantityInput.value = currentValue - 1;
+        }
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const addToCartBtn = document.getElementById("add-to-cart-btn");
+      const cartCountSpan = document.getElementById("cartCount");
+  
+      // Load cart count on page load
+      updateCartCount();
+  
+      addToCartBtn.addEventListener("click", () => {
+        const productName = document.getElementById("product-name").textContent;
+        const productPrice = document.getElementById("product-price").textContent;
+        const productImage = document.getElementById("main-product-image").src;
+        const productSKU = document.getElementById("product-sku").textContent;
+        const selectedSize = document.getElementById("size").value;
+        const quantity = parseInt(document.getElementById("quantity").value);
+  
+        if (!selectedSize) {
+          alert("Please select a size before adding to cart.");
+          return;
+        }
+  
+        const product = {
+          sku: productSKU,
+          name: productName,
+          price: productPrice,
+          image: productImage,
+          size: selectedSize,
+          quantity: quantity,
+        };
+  
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  
+        // Check if same product with same size already exists
+        const existingProductIndex = cart.findIndex(
+          (item) => item.sku === product.sku && item.size === product.size
+        );
+  
+        if (existingProductIndex !== -1) {
+          cart[existingProductIndex].quantity += quantity;
+        } else {
+          cart.push(product);
+        }
+  
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartCount();
+        showNotification("Product added to cart!");
+      });
+  
+      function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+        cartCountSpan.textContent = totalCount;
+      }
+  
+      function showNotification(message) {
+        const notification = document.getElementById("notification");
+        notification.textContent = message;
+        notification.classList.add("show");
+        setTimeout(() => {
+          notification.classList.remove("show");
+        }, 2000);
+      }
+    });
+  </script>
+  
+</body>
+</html>
+
