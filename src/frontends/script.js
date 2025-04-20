@@ -10,25 +10,25 @@ let productToDelete = null
 let activityLog = JSON.parse(localStorage.getItem("activityLog")) || []
 
 // Theme Toggle
-function initTheme() {
-  const themeToggle = document.getElementById("themeToggle")
-  if (!themeToggle) return
+// function initTheme() {
+//   const themeToggle = document.getElementById("themeToggle")
+//   if (!themeToggle) return
 
-  // Check for saved theme preference or use system preference
-  const savedTheme = localStorage.getItem("theme")
-  const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+//   // Check for saved theme preference or use system preference
+//   const savedTheme = localStorage.getItem("theme")
+//   const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
 
-  if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
-    document.documentElement.classList.add("dark")
-  }
+//   if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
+//     document.documentElement.classList.add("dark")
+//   }
 
-  themeToggle.addEventListener("click", toggleTheme)
-}
+//   themeToggle.addEventListener("click", toggleTheme)
+// }
 
-function toggleTheme() {
-  const isDark = document.documentElement.classList.toggle("dark")
-  localStorage.setItem("theme", isDark ? "dark" : "light")
-}
+// function toggleTheme() {
+//   const isDark = document.documentElement.classList.toggle("dark")
+//   localStorage.setItem("theme", isDark ? "dark" : "light")
+// }
 
 // Mobile Menu
 function initMobileMenu() {
