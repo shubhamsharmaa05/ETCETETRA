@@ -28,26 +28,6 @@
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-.dark {
-  --color-primary: #f8fafc;
-  --color-primary-hover: #e2e8f0;
-  --color-primary-foreground: #0f172a;
-  --color-secondary: #1e293b;
-  --color-secondary-hover: #334155;
-  --color-secondary-foreground: #f8fafc;
-  --color-muted: #64748b;
-  --color-muted-foreground: #94a3b8;
-  --color-accent: #334155;
-  --color-accent-foreground: #f8fafc;
-  --color-border: #1e293b;
-  --color-input: #0f172a;
-  --color-input-foreground: #f8fafc;
-  --color-focus: #3b82f6;
-  --color-background: #0f172a;
-  --color-foreground: #f8fafc;
-  --color-card: #1e293b;
-  --color-card-foreground: #f8fafc;
-}
 
 * {
   box-sizing: border-box;
